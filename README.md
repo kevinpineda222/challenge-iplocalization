@@ -51,7 +51,7 @@ Tanto para la ejecucion local como para ejecutar el contenedor de docker, se ha 
 
 ## Herramientas Utilizadas 🛠️
 
-_Menciona las herramientas que utilizaste para crear tu proyecto_
+Se utilizaron las siguientes herramientas para el desarrollo :
 
 * [Spring Boot](https://spring.io/projects/spring-boot)
 * [Gradle](https://gradle.org/)
@@ -61,4 +61,4 @@ _Menciona las herramientas que utilizaste para crear tu proyecto_
 ## Autor ✒️
 
 **Kevin Pineda**
-*[Linkedin](https://www.linkedin.com/in/kevin-pineda-05a30b19a?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BZCWMjLqKTfeD5SDA05jlKQ%3D%3D)
+* [Linkedin](https://www.linkedin.com/in/kevin-pineda-05a30b19a?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BZCWMjLqKTfeD5SDA05jlKQ%3D%3D)
