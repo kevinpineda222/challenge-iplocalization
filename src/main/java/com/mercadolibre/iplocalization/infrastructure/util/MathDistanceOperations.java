@@ -3,7 +3,7 @@ package com.mercadolibre.iplocalization.infrastructure.util;
 public class MathDistanceOperations {
 
 	private MathDistanceOperations() {
-		throw new IllegalStateException("Utility class");
+		throw new IllegalStateException("Math Operations Class");
 	}
 	
 	public static int distance(double lat1, double lat2, double lon1, double lon2) {
