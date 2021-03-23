@@ -30,27 +30,24 @@ public class RestControllerIPTest {
 
     private String ipDefaultInvalidFormat = "181.2290.2020.1100";
 
+
+    @Test(expected = BadIpFormatException.class)
+    public void badRequestTest() throws BadIpFormatException {
+        ResponseEntity<LocalizationDataIP> responseEntity = restControllerIP.getCountryInfoByIp(ipDefaultInvalidFormat);
+    }
     @Test
     public void getCountryInfoByIp() throws BadIpFormatException {
 
-        String IPTEST = ipDefaultTest;
+        ResponseEntity<LocalizationDataIP> dataIPResponseEntity = restControllerIP.getCountryInfoByIp(ipDefaultTest);
+        LocalizationDataIP localizationDataIP = countryInfoSearched.getInfoByIp(ipDefaultTest);
 
-        if (IPTEST != ipDefaultTest) {
+        assertEquals(dataIPResponseEntity.getStatusCode(), HttpStatus.OK);
 
-            ResponseEntity<LocalizationDataIP> responseEntity = restControllerIP.getCountryInfoByIp(ipDefaultInvalidFormat);
-            assertEquals(responseEntity.getStatusCode(), HttpStatus.BAD_REQUEST);
-        } else {
-            ResponseEntity<LocalizationDataIP> dataIPResponseEntity = restControllerIP.getCountryInfoByIp(ipDefaultTest);
-            LocalizationDataIP localizationDataIP = countryInfoSearched.getInfoByIp(IPTEST);
-
-            assertEquals(dataIPResponseEntity.getStatusCode(), HttpStatus.OK);
-
-            assertNotNull(localizationDataIP);
-            assertEquals(localizationDataIP.getCountry(), prepareLocalizationDataIP().getCountry());
-            assertEquals(localizationDataIP.getDistance(), prepareLocalizationDataIP().getDistance());
-            assertEquals(localizationDataIP.getIsoCode(), prepareLocalizationDataIP().getIsoCode());
-            assertEquals(localizationDataIP.getLanguage(), prepareLocalizationDataIP().getLanguage());
-        }
+        assertNotNull(localizationDataIP);
+        assertEquals(localizationDataIP.getCountry(), prepareLocalizationDataIP().getCountry());
+        assertEquals(localizationDataIP.getDistance(), prepareLocalizationDataIP().getDistance());
+        assertEquals(localizationDataIP.getIsoCode(), prepareLocalizationDataIP().getIsoCode());
+        assertEquals(localizationDataIP.getLanguage(), prepareLocalizationDataIP().getLanguage());
     }
 
     public LocalizationDataIP prepareLocalizationDataIP() {
